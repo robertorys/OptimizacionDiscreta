@@ -8,14 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * @brief Estructura de datos para las tareas.
- * 
- * @param r (int) Tiempo de liberación.
- * @param p (int) Tiempo de procesamiento.
- * @param q (int) Tiempo de entrega/cola.
- * @param q (int) Tiempo de asignación en la máquina.
-*/
 typedef struct tasks {
     int r;
     int p; 
@@ -27,26 +19,38 @@ typedef struct tasks {
 /**
  * @brief Heurística de Jackson.
  * 
- * @param list (Task*) Lista de tipo Task para los tabajos.
+ * @param list Arreglo de tipo Task para los tabajos.
  */
 void JE_heuristic(Task* list);
-
 /**
  * @brief Función objetivo.
  * 
- * @param list (Task*) Lista de tipo Task para los tabajos.
+ * @param list Arreglo de tipo Task para los tabajos.
  * @return Valor máximo de completés total.
 */
 int ObjectiveFunction(Task* list);
-
 /**
- * @brief Función para ingresar una instancia.
- * @return Task* Arreglo con la instancia.
+ * @brief Función para ingresar una instancia desde consola.
+ * @return Arreglo con la instancia.
  */
 Task* GetList();
-
+/**
+ * @brief Función para cambiar de posición dos elementos de una arreglo tipo Task*.
+ * 
+ * @param i Entero del primer elemento a cambiar.
+ * @param j Entero del primer elemento a cambiar.
+ * @param l Arreglo con tipo de datos Task.
+*/
 void swap(int i, int j, Task* l);
+/**
+ * @brief Función para obtener una instancia establecida.
+ * 
+ * @return Arreglo con la instancia.
+*/
 Task* instancia();
+/**
+ * @brief Imprime el arreglo list en consila con los datos de cada elemento de tipo Task.
+*/
 void printList(Task* list);
 
 int n;

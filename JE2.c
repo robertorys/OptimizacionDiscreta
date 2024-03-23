@@ -28,23 +28,115 @@ typedef struct list{
     struct node* tail;
 }List;
 
+/**
+ * @brief Reserva la memoria para un nuevo nodo de tipo Nodo.
+ * 
+ * @param task Estructura de tipo Task para la información del nodo.
+ * @return Node* Apuntador del nuevo nodo.
+*/
 Node* createNode(Task task);
+/**
+ * @brief Inicializa una estructura de tipo List.
+ * 
+ * @return List* Apuntador de la nueva lista.
+*/
 List* createList();
+/**
+ * @brief Imprime la lista en consola con los datos,
+ *  r,p,q y timepos asignados, de cada uno en consola.
+ * 
+ * @param list Apuntador de la lista.
+*/
 void printl(List* list);
+/**
+ * @brief Agrega un nuevo elemento al final de la lista.
+ * 
+ * @param list Apuntador de la lista.
+ * @param task Datos de la tarea a agregar.
+*/
 void append(List* list, Task task);
+/**
+ * @brief Agrega un nuevo elemento al final de la lista.
+ * 
+ * @param list Apuntador de la lista.
+ * @param node Nodo con los datos de la tarea.
+*/
 void appendn(List* list, Node* node);
+/**
+ * @brief Regresa y saca un nodo de la lista.
+ * 
+ * @param list Apuntador de la lista.
+ * @param node Apuntador del nodo a eliminar de la lista.
+ * @return Apuntador del nodo eliminado.
+*/
 Node* removen(List* list, Node* node);
+/**
+ * @brief Itera sobre una lista para obtener un elemento.
+ * 
+ * @param list Apuntador de la lista.
+ * @param i Posición del elemento a consultar.
+ * @return Apuntador del nodo consultado.
+*/
 Node* iterate(List* list, int i);
+/**
+ * @brief Elimina y libera la memoria de una lista.
+ * 
+ * @param list Apuntador de la lista.
+*/
 void deletel(List* list);
 
+/**
+ * @brief Intercambia de posición dos nodos y actualiza sus respectivos apuntadores a los otros nodos.
+ * 
+ * @param a Apuntador de un nodo.
+ * @param b Apuntador de un nodo.
+*/
 void swap(Node* a, Node* b);
+/**
+ * @brief Ordena los nodos de modo que los valores de la cola, menor al primer elemento (pivote), 
+ * del lado izquierdo y los nodos con valores de cola mayores del lado derecho.
+ * 
+ * @param arr Apuntador de la lista.
+ * @param low Primera posición de elementos a ordenar.
+ * @param high Última posición de elementos a ordenar.
+ * @return pocisión donde quedo el pivote.
+*/
 int partition(List* arr, int low, int high);
+/**
+ * @brief Función recursiva para oredar la lista de forma no ascendete por el valor de las colas.
+ * 
+ * @param arr Apuntador de la lista.
+ * @param low Primera posición de elementos a ordenar.
+ * @param high Última posición de elementos a ordenar.
+*/
 void quickSort(List* arr, int low, int high);
 
+/**
+ * @brief Consulta una instancia para el problema por la consola.
+ * 
+ * @return Apuntdor de la lista con la instancia.
+*/
 List* GetList();
+/**
+ * @brief Genera una instancia dada. 
+ * 
+ * @return Apuntdor de la lista con la instancia.
+*/
 List* instancia();
 
+/**
+ * @brief Heurística de Jackson.
+ * 
+ * @param list (List*): Apuntador de tipo de dato List para los tabajos.
+ * @return List*: Apuntador del tipo de dato List con el calendario.
+ */
 List* JE_heuristic(List* list);
+/**
+ * @brief Heurística de Jackson.
+ * 
+ * @param list (List*) Apuntador de tipo de dato List para los tabajos.
+ * @return int: Apuntador del tipo de dato List con el calendario.
+ */
 int JE_fuction(List* list);
 
 int main(void) {
