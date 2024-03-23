@@ -8,9 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define True 1
-#define False 0
-
 typedef struct tasks {
     int i; 
     int r;
